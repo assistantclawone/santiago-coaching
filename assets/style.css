@@ -327,3 +327,52 @@ img,svg{max-width:100%;height:auto}
 @media (max-width:400px){
   .grid.c4,.grid.c3,.grid.c5,.grid.c2,.steps,.services,.grid.c3.services{grid-template-columns:1fr}
 }
+
+/* ---------- Zielgruppen-Pfad-Kacheln (B2C / B2B) ---------- */
+.paths{margin-top:8px}
+.path-card{
+  display:flex;flex-direction:column;gap:10px;text-decoration:none;color:inherit;
+  background:linear-gradient(160deg,#ffffff,#f2f7fb);
+  border:1.5px solid var(--line);border-radius:var(--radius);
+  padding:32px 30px;box-shadow:0 4px 18px rgba(18,48,87,.06);
+  transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease;
+}
+.path-card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(18,48,87,.13);border-color:var(--navy-2);text-decoration:none}
+.path-ico{font-size:32px;line-height:1}
+.path-card h3{font-size:23px;margin:0;color:var(--navy)}
+.path-card p{color:var(--grey);font-size:16px;margin:0;line-height:1.55}
+.path-cta{margin-top:auto;padding-top:14px;font-weight:700;color:var(--navy-2);font-size:16px}
+.path-card:hover .path-cta{text-decoration:underline}
+
+/* ---------- Accordion (aufklappbare Themenbereiche) ---------- */
+.accordion{display:grid;gap:12px}
+.accordion details{
+  background:#fff;border:1px solid var(--line);border-radius:14px;padding:0;overflow:hidden;
+  transition:border-color .15s ease,box-shadow .15s ease;
+}
+.accordion details[open]{border-color:var(--navy-2);box-shadow:0 8px 26px rgba(18,48,87,.08)}
+.accordion summary{
+  display:flex;align-items:center;gap:14px;cursor:pointer;list-style:none;
+  padding:20px 24px;font-weight:600;color:var(--navy);
+}
+.accordion summary::-webkit-details-marker{display:none}
+.accordion summary::after{
+  content:"+";margin-left:auto;font-size:24px;font-weight:400;color:var(--teal);
+  transition:transform .18s ease;flex:none;line-height:1;
+}
+.accordion details[open] summary::after{content:"–";}
+.accordion summary h3{margin:0;font-size:20px;color:var(--navy);display:inline}
+.accordion summary:hover{background:#f4f8fc}
+.acc-ico{font-size:22px;flex:none}
+.acc-body{padding:0 24px 22px 62px}
+.acc-body p{margin:0 0 12px;color:var(--grey);font-size:16px}
+.acc-body ul{margin:0;padding-left:20px;color:var(--grey);font-size:15.5px}
+.acc-body li{margin-bottom:6px}
+.acc-body li strong{color:var(--navy)}
+@media (max-width:560px){
+  .path-card{padding:24px 22px}
+  .path-card h3{font-size:20px}
+  .accordion summary{padding:16px 18px;gap:10px}
+  .accordion summary h3{font-size:17.5px}
+  .acc-body{padding:0 18px 18px 18px}
+}
