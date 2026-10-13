@@ -35,9 +35,9 @@ header.site{
   backdrop-filter:blur(8px);
   border-bottom:1px solid var(--line);
 }
-header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;height:78px}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:78px}
 .brand{display:flex;align-items:center;gap:16px;font-weight:700;color:var(--navy);letter-spacing:.2px;min-width:0}
-.brand img.logo{height:44px;width:auto;flex:none}
+.brand img.logo{height:46px;width:46px;object-fit:contain;display:block;flex:none}
 .brand .brand-sub{
   display:block;font-weight:500;color:var(--grey);font-size:11px;letter-spacing:.5px;
   text-transform:uppercase;border-left:1px solid var(--line);padding-left:16px;line-height:1.4;
@@ -257,7 +257,7 @@ body.print .avoid-break{break-inside:avoid}
 
 /* ---------- Wortmarke & Kontakt ---------- */
 .foot-brand{display:flex;align-items:center;gap:14px}
-.foot-brand img{background:#fff;border-radius:6px;padding:4px 6px}
+.foot-brand img{background:#fff;border-radius:8px;padding:5px;height:44px;width:44px;object-fit:contain;display:block;flex:none}
 .contact-head{display:flex;align-items:center;gap:18px;margin-bottom:14px}
 .contact-avatar{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:center 12%;border:3px solid rgba(255,255,255,.35);flex:none}
 @media (max-width:560px){
