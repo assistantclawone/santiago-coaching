@@ -25,7 +25,7 @@ img{max-width:100%;display:block}
 a{color:var(--navy-2);text-decoration:none}
 a:hover{text-decoration:underline}
 
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
 .narrow{max-width:820px}
 
 /* ---------- Header ---------- */
@@ -35,41 +35,52 @@ header.site{
   backdrop-filter:blur(8px);
   border-bottom:1px solid var(--line);
 }
-header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:78px}
-.brand{display:flex;align-items:center;gap:16px;font-weight:700;color:var(--navy);letter-spacing:.2px;min-width:0;flex:1 1 auto;overflow:visible}
-.brand img.logo{height:46px;width:46px;object-fit:contain;display:block;flex:none}
+/* Zeile 1: Wortmarke + Slogan (links) · Sprachwahl (rechts) */
+header.site .brandrow{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:12px 0 10px}
+.brand{display:flex;align-items:center;gap:15px;font-weight:700;color:var(--navy);letter-spacing:.2px;min-width:0}
+.brand img.logo{height:48px;width:48px;object-fit:contain;display:block;flex:none}
 .brand .brand-sub{
-  display:block;font-weight:500;color:var(--grey);font-size:11px;letter-spacing:.5px;
-  text-transform:uppercase;border-left:1px solid var(--line);padding-left:16px;line-height:1.4;
-  white-space:normal;overflow-wrap:break-word;max-width:34ch;
+  display:block;font-weight:500;color:var(--grey);font-size:11.5px;letter-spacing:.6px;
+  text-transform:uppercase;border-left:1px solid var(--line);padding-left:15px;line-height:1.45;
+  white-space:nowrap;
 }
-nav.main{display:flex;gap:18px;font-size:15px;align-items:center;flex-wrap:wrap;justify-content:flex-end;min-width:0;flex:0 0 auto}
-nav.main a{white-space:nowrap}
-nav.main a{color:var(--ink);font-weight:500}
+/* Sprachwahl in Zeile 1, rechts */
+header.site .langswitch{display:flex;gap:2px;align-items:center;border:1px solid var(--line);border-radius:999px;padding:2px;flex:none}
+header.site .langswitch a{
+  font-size:12.5px;font-weight:600;padding:5px 10px;border-radius:999px;color:var(--grey);
+  letter-spacing:.4px;
+}
+header.site .langswitch a:hover{background:#eef3f9;text-decoration:none}
+header.site .langswitch a.active{background:var(--navy);color:#fff}
+/* Zeile 2: Navigation, volle Breite */
+header.site .navrow{border-top:1px solid var(--line)}
+nav.main{display:flex;gap:22px;font-size:15px;align-items:center;justify-content:flex-start;flex-wrap:wrap;padding:9px 0;min-width:0}
+nav.main a{color:var(--ink);font-weight:500;white-space:nowrap}
 nav.main a.cta{
-  background:var(--navy);color:#fff;padding:10px 18px;border-radius:999px;font-weight:600;
+  background:var(--navy);color:#fff;padding:9px 18px;border-radius:999px;font-weight:600;
 }
 nav.main a.cta:hover{background:var(--navy-2);text-decoration:none}
 nav.main a.nav-home{color:var(--navy);font-weight:600}
-
-/* ---------- Language switcher ---------- */
-nav.main .langswitch{display:flex;gap:2px;align-items:center;border:1px solid var(--line);border-radius:999px;padding:2px;flex:none;order:99}
-nav.main .langswitch a{
-  font-size:12.5px;font-weight:600;padding:5px 9px;border-radius:999px;color:var(--grey);
-  letter-spacing:.4px;
-}
-nav.main .langswitch a:hover{background:#eef3f9;text-decoration:none}
-nav.main .langswitch a.active{background:var(--navy);color:#fff}
 @media (max-width:900px){
-  nav.main{gap:14px;font-size:14px}
-  nav.main .langswitch a{padding:4px 7px;font-size:12px}
+  .brand .brand-sub{font-size:11px}
+  .brand img.logo{height:44px;width:44px}
+  nav.main{gap:18px;font-size:14.5px}
+  header.site .langswitch a{padding:4px 8px;font-size:12px}
 }
 @media (max-width:820px){
-  header.site .wrap{height:auto;flex-wrap:wrap;gap:10px;padding-top:12px;padding-bottom:12px}
-  nav.main{order:3;width:100%;justify-content:flex-start;gap:14px;flex-wrap:wrap}
-  nav.main .langswitch{margin-left:auto}
-  .brand .brand-sub{border-left:0;padding-left:0;white-space:normal}
+  header.site .brandrow{flex-wrap:wrap;gap:12px}
+  .brand .brand-sub{border-left:0;padding-left:0;white-space:normal;font-size:10.5px;letter-spacing:.4px}
+  nav.main{justify-content:flex-start;gap:16px}
   .hero .wrap{padding-top:32px}
+}
+@media (max-width:640px){
+  header.site .brandrow{justify-content:space-between}
+  .brand{gap:11px}
+  .brand img.logo{height:40px;width:40px}
+  .brand .brand-sub{display:none}
+  header.site .langswitch{margin-left:auto}
+  nav.main{gap:14px;font-size:14px;flex-wrap:wrap}
+  nav.main a.cta{padding:8px 14px}
 }
 
 
@@ -202,7 +213,6 @@ body.print .avoid-break{break-inside:avoid}
 
 @media (max-width:1100px){
   .grid.c5{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .brand .brand-sub{display:none}
 }
 @media (max-width:900px){
   .hero .wrap{grid-template-columns:1fr;gap:34px;padding:48px 24px 38px}
