@@ -36,14 +36,14 @@ header.site{
   border-bottom:1px solid var(--line);
 }
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:78px}
-.brand{display:flex;align-items:center;gap:16px;font-weight:700;color:var(--navy);letter-spacing:.2px;min-width:0}
+.brand{display:flex;align-items:center;gap:16px;font-weight:700;color:var(--navy);letter-spacing:.2px;min-width:0;flex:1 1 auto;overflow:visible}
 .brand img.logo{height:46px;width:46px;object-fit:contain;display:block;flex:none}
 .brand .brand-sub{
   display:block;font-weight:500;color:var(--grey);font-size:11px;letter-spacing:.5px;
   text-transform:uppercase;border-left:1px solid var(--line);padding-left:16px;line-height:1.4;
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  white-space:normal;overflow-wrap:break-word;max-width:34ch;
 }
-nav.main{display:flex;gap:18px;font-size:15px;align-items:center;flex-wrap:wrap;justify-content:flex-end;min-width:0}
+nav.main{display:flex;gap:18px;font-size:15px;align-items:center;flex-wrap:wrap;justify-content:flex-end;min-width:0;flex:0 0 auto}
 nav.main a{white-space:nowrap}
 nav.main a{color:var(--ink);font-weight:500}
 nav.main a.cta{
